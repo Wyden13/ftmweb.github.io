@@ -27,9 +27,11 @@ html {
 
 body {
     background-color: var(--body-color);
-    display: block;
+    display: flex;
+    position: relative;
     align-items: center;
     min-height: 100vh;
+    width: 100%;
     overflow: auto;
     flex-direction: column;
 }
@@ -40,7 +42,6 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    z-index: 100px;
     top: 0;
     left: 0;
 }
@@ -54,7 +55,6 @@ header {
 }
 
 .menu-links {
-    margin-right: 50px;
     display: flex;
 }
 
@@ -84,7 +84,6 @@ header {
 
 .nav-bar .logo {
     height: 84px;
-
     align-items: center;
     justify-content: center;
     display: flex;
@@ -96,14 +95,30 @@ header {
     align-items: center;
 }
 
+.nav-bar .image img {
+    font-size: 50px;
+}
+
+.nav-bar .toggle {
+    align-items: center;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    margin-right: 30px;
+    opacity: 1;
+}
+
+.toggle i {
+    align-self: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
 /*--Main content--*/
 main {
     margin-top: 84px;
     width: 100%;
-    height: calc(100%);
-    top: 0;
-    left: 0;
-    display: block;
+
 }
 
 .homepage {
@@ -112,6 +127,7 @@ main {
 }
 
 .homepage .header {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -143,8 +159,6 @@ main {
 .member-introduction {
     background-color: var(--primary-color);
     justify-content: center;
-    top: 0;
-    left: 0;
     align-items: center;
     display: flex;
     width: 100%;
@@ -164,6 +178,7 @@ main {
     display: flex;
     flex-direction: row;
     list-style: none;
+    align-items: center;
     justify-content: center;
     gap: 200px;
     padding: 20px;
@@ -181,16 +196,18 @@ main {
 .teamImage ul li .text {
     display: flex;
     justify-content: center;
-    margin-top: 15px;
+}
+
+.bottom-contents {
+    margin: 30px;
 }
 
 /*--Footer--*/
 footer {
     width: 100%;
     justify-content: center;
-    position: relative;
     left: 0;
-    right: auto;
+    right: 0;
     bottom: 0;
     margin-top: auto;
     padding-top: 10px;
@@ -282,4 +299,222 @@ footer {
     justify-content: center;
     background-color: var(--primary-color1);
     padding: 10px;
+}
+
+
+
+/*=============================================*/
+@media (max-width:700px) {
+
+    /*=====NAVIGATION BAR=====*/
+    body {
+        min-width: fit-content;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--navbar-height);
+        background-color: var(--navnar-color);
+    }
+
+    .nav-bar {
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        z-index: 100px;
+    }
+    .menu{
+        display: flex;
+        margin:auto;
+        margin-top: 90px;
+        width: 80%;
+        background-color: var( --navnar-color);
+        justify-content: center;
+        align-items: center;
+        border: 2px ;
+        border-radius: 15px;
+        transition: nav(--tran-02);
+
+    }
+    .menu .menu-links{
+        display:block;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        opacity: 1;
+        margin-top: 10px;
+    }
+    .menu.close .menu-links
+    {
+        opacity: 0;
+    }
+    .menu-links li{
+        width: 100%;
+    }
+
+    .menu-links li:hover{
+        background: var(--primary-color1);
+        transition:var(--tran-02);
+    }
+    .menu.close{
+
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    header .toggle {
+        display: flex;
+        position: absolute;
+        justify-content: center;
+        right: 5px;
+    }
+
+    .nav-bar .logo {
+        position: absolute;
+    }
+
+    /*===========MAIN CONTENT===========*/
+    main {
+
+    }
+
+    .homepage {
+        width: 100%;
+    }
+
+    .homepage .header {
+        display: block;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .homepage .column {
+        padding: 20px;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .homepage .column .left {
+        display: inline-block;
+    }
+
+    .homepage .column .right {
+        display: inline-block;
+    }
+
+    .homepage .header .vertical-line {
+        border: 1px solid var(--primary-color1);
+        opacity: 0.2;
+        height: 1px;
+        width: 100%;
+        display: inline-block;
+        margin: 20px;
+    }
+
+
+    /*======INTRODUCTION ======*/
+    .member-introduction {
+        background-color: var(--primary-color);
+        margin-top: auto;
+    }
+
+    .teamImage img {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+    .teamImage ul {
+        display: inline-block;
+        list-style: none;
+        justify-content: center;
+    }
+
+    .teamImage ul li {
+        width: 100%;
+        align-items: center;
+        text-align: left;
+    }
+
+    .teamImage ul li .text {
+        display: inline-block;
+        margin-inline-start: 30px;
+        justify-content: center;
+
+    }
+
+    .bottom-contents {
+        margin: auto;
+    }
+
+
+    footer {
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .footerContainer {
+        width: 100%;
+        bottom: 0;
+        background-color: var(--navnar-color);
+        justify-content: space-between;
+        position:relative
+    }
+
+    .socialIcons {
+        display: inline-flexbox;
+        justify-content: center;
+    }
+
+    .socialIcons a {
+        text-decoration: none;
+        padding: 10px;
+        background-color: rgb(137, 174, 134, 0.5);
+        margin: 10px;
+        border-radius: 50%;
+    }
+
+    .socialIcons a i {
+        font-size: 1.5em;
+        color: black;
+        opacity: 0.9;
+    }
+
+
+    .footerNav {
+
+        margin: 30px 0;
+    }
+
+    .footerNav ul {
+        display: inline-flexbox;
+        justify-content: center;
+    }
+
+    .footerNav ul li a {
+        color: var(--text-color);
+        margin: 20px;
+        text-decoration: 0;
+        font-size: 1.0em;
+        opacity: 0.7;
+        transition: var(--tran-02);
+    }
+
+
+
+    .footerBottom {
+        opacity: 0.7;
+        display: inline-flexbox;
+        justify-content: center;
+        background-color: var(--primary-color1);
+        padding: 10px;
+    }
+
 }
