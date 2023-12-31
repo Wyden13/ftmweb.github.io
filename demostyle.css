@@ -105,7 +105,7 @@ header {
     position: absolute;
     justify-content: center;
     margin-right: 30px;
-    opacity: 1;
+    opacity: 0;
 }
 
 .toggle i {
@@ -138,13 +138,22 @@ main {
     padding: 20px;
 }
 
-.homepage .column .left {
+.homepage .column.left {
     float: left;
 }
 
 .homepage .column .right {
+    display: flex;
     float: right;
+    justify-content: center;
 
+}
+
+.homepage .column.right img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
 }
 
 .homepage .header .vertical-line {
@@ -163,7 +172,7 @@ main {
     display: flex;
     width: 100%;
     margin-top: 100px;
-    margin-bottom:100px;
+    margin-bottom: 100px;
 
 }
 
@@ -327,51 +336,56 @@ footer {
         align-items: center;
         z-index: 100px;
     }
-    .menu{
+
+    .menu {
         display: flex;
-        margin:auto;
+        margin: auto;
         margin-top: 90px;
         width: 80%;
-        background-color: var( --navnar-color);
+        background-color: var(--navnar-color);
         justify-content: center;
         align-items: center;
-        border: 2px ;
+        border: 2px;
         border-radius: 15px;
         transition: nav(--tran-02);
 
     }
-    .menu .menu-links{
-        display:block;
+
+    .menu .menu-links {
+        display: block;
         justify-content: center;
         align-items: center;
         width: 100%;
         opacity: 1;
         margin-top: 10px;
     }
-    .menu.close .menu-links
-    {
+
+    .menu.close .menu-links {
         opacity: 0;
     }
-    .menu-links li{
+
+    .menu-links li {
         width: 100%;
     }
 
-    .menu-links li:hover{
+    .menu-links li:hover {
         background: var(--primary-color1);
-        transition:var(--tran-02);
+        transition: var(--tran-02);
     }
-    .menu.close{
+
+    .menu.close {
 
         opacity: 0;
         width: 0;
         height: 0;
     }
 
-    header .toggle {
+    .nav-bar .toggle {
         display: flex;
         position: absolute;
         justify-content: center;
         right: 5px;
+        opacity: 1;
     }
 
     .nav-bar .logo {
@@ -379,9 +393,7 @@ footer {
     }
 
     /*===========MAIN CONTENT===========*/
-    main {
-
-    }
+    main {}
 
     .homepage {
         width: 100%;
@@ -465,7 +477,7 @@ footer {
         bottom: 0;
         background-color: var(--navnar-color);
         justify-content: space-between;
-        position:relative
+        position: relative
     }
 
     .socialIcons {
